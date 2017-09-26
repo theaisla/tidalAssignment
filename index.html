@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Tittel -->
+    <title>TIDAL · High Fidelity Music Streaming</title>
+    <meta name="description" content="TIDAL is the first music service with High Fidelity sound quality, High Definition music videos and Curated Editorial, expertly crafted by music journalists.">
+		<!-- css -->
+		<link rel="stylesheet" href="src/css/style.css">
+    <!-- other -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta charset="utf-8"/>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- js files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+    <script src="src/js/angularApp.js"></script>
+    <script src='src/js/angular-parallax.js'></script>
+    <script src='src/js/angular-swipe.js'></script>
+    <script src='src/js/angular-animate.js'></script>
+  </head>
+
+  <body ng-app="app">
+
+    <header ng-controller="dropdownCtrl" id="theHead">
+
+      <img src="src/img/logo/logo.png" alt="Tidal logo" id="logo1">
+
+      <div class="dropdown" type="button">
+        <img src="src/img/icons/menu_icon.png" class="button" id="hamburger">
+
+        <div class="menu">
+          <img src="src/img/icons/x_icon.png" alt="Close menu icon" class="x_icon">
+				  <ul>
+					  <li><a ng-click="about">About</a></li>
+            <li><a ng-click="player">Web Player</a></li>
+            <li><a ng-click="download">Download</a></li>
+            <li><a ng-click="help">Help</a></li>
+            <li><a ng-click="pricing">Pricing</a></li>
+            <li><a ng-click="contact">Contact</a></li>
+			  	</ul>
+          <div >
+            <a href="https://www.facebook.com/TIDALNorge/?brand_redir=1469901979927714" title="Facebook account" class="some_icon">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/TIDALHiFi" title="Twitter account" class="some_icon">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://plus.google.com/+TIDALHiFi" title="Google+ account" class="some_icon">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </div>
+        </div>
+			</div>
+    </header>
+
+    <section id="section1" ng-controller="carousel">
+
+      <div id="slide1" class="sliderClass" ng-show="isSet(1)" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
+        <div class="rescontainer">
+          <div class="slide_textbox">
+            <h1>New album from Future.</h1>
+            <h2>Lorem ipsum dolor sit amet, consectetur and un scing elit, sed do eiusmod tempor incid .</h2>
+            <a href="" class="h3_link">
+              <div class="h3_box_listen">
+                <h3 class="listen">Listen to Album</h3>
+              </div>
+            </a>
+          </div>
+        <div class="imgContainerC"><img src="src/img/illustrations/cover.png" alt="Future album cover" id="cover"></div>
+      </div>
+      </div>
+
+
+      <div id="slide2" class="sliderClass" ng-show="isSet(2)" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
+        <div class="rescontainer">
+          <div class="slide_textbox">
+            <h1>Watch exclusive videos.</h1>
+            <h2>Ut enim ad minim veniam, quis nostrud exercita on ullamco laboris nisi ut aliquip ex ea.</h2>
+            <a href="" class="h3_link">
+              <div class="h3_box_listen">
+                <h3 class="listen">watch videos</h3>
+              </div>
+            </a>
+          </div>
+          <div class="imgContainerV"><img src="src/img/illustrations/video.png" alt="image of video clip" id="video"></div>
+        </div>
+      </div>
+
+
+      <div id="slide3" class="sliderClass" ng-show="isSet(3)" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
+        <div class="rescontainer">
+          <div class="slide_textbox">
+            <h1>Experience DS2 live.</h1>
+            <h2>Duis aute irure dolor in reprehenderit in volup tate velit esse cillum dolore eu fugiat nu.</h2>
+            <a href="" class="h3_link">
+              <div class="h3_box_listen">
+                <h3 class="listen">Buy tickets</h3>
+              </div>
+            </a>
+          </div>
+          <div class="imgContainerB"><img src="src/img/illustrations/brush.png" alt="image of abstract brush" id="brush"></div>
+        </div>
+      </div>
+
+
+      <div id="circlecontainer">
+        <a href ng-click="setTab(1)"><div ng-class="{ 'active': isSet(1) }" class="{{cssCircle(1)}}"}></div></a>
+	      <a href ng-click="setTab(2)"><div ng-class="{ 'active': isSet(2) }" class="{{cssCircle(2)}}"></div></a>
+        <a href ng-click="setTab(3)"><div ng-class="{ 'active': isSet(3) }" class="{{cssCircle(3)}}"></div></a>
+      </div>
+
+
+    </section>
+
+    <section id="section2">
+      <img parallax parallax-ratio="0.2" src="src/img/illustrations/mountains.png" alt="screenshot of the application" id="mountainillustration">
+    </section>
+
+
+    <section id="section3">
+      <img parallax parallax-ratio="-0.2" src="src/img/illustrations/screenshot_1.png" alt="screenshot of the application" id="screenshot">
+    </section>
+
+
+    <section id="section4" parallax-background parallax-ratio="0.2">
+      <div class="device_icons">
+        <i class="fa fa-apple"></i>
+        <i class="fa fa-android"></i>
+        <i class="fa fa-desktop"></i>
+        <i class="fa fa-wifi"></i>
+      </div>
+
+      <p id="sec4p"> Seamless listening across mobile, tablet, desktop and network players.
+        Enjoy lossless music streaming on Apple devices from iPhone, iPad and
+        iPod to Mac, as well as on PC and Android systems. Plus integration in a
+        wide range of high fidelity network players.</p>
+
+      <a href="" class="h3_link_try"><div class="h3_box_try">
+        <h3 id="trytidal">Try Tidal Now</h3>
+      </div></a>
+
+    </section>
+
+    <footer>
+      <p id="copyright"> 2015 © TIDAL</p>
+
+      <div id="footer_icons">
+       <a href="https://www.facebook.com/TIDALNorge/?brand_redir=1469901979927714" title="Facebook account" class="some_icon_footer">
+          <i class="fa fa-facebook"></i>
+        </a>
+
+        <a href="https://twitter.com/TIDALHiFi" title="Twitter account" class="some_icon_footer">
+          <i class="fa fa-twitter"></i>
+        </a>
+
+        <a href="https://plus.google.com/+TIDALHiFi" title="Google+ account" class="some_icon_footer">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </div>
+
+    </footer>
+
+    <script src="src/js/dropdownCtrl.js"></script>
+    <script src="src/js/carousel.js"></script>
+
+  </body>
+
+</html>
